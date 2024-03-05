@@ -1,0 +1,24 @@
+@import "../../../variables.css";
+
+
+[class*=sidebar-dark-] .sidebar a {
+  color: #DFDFDF;
+  font-size: 16px;
+}
+
+[class*=sidebar-dark] .brand-link, [class*=sidebar-dark] .brand-link .pushmenu {
+  color: #DFDFDF;
+  font-size: 20px;
+}
+
+[class*=sidebar-dark] .brand-link {
+  border-bottom: 1px solid rgba(255,255,255, 0.3);
+}
+
+[class*=sidebar-dark] .user-panel {
+  border-bottom: 1px solid rgba(255,255,255, 0.3);
+}
+
+.sidebar-background{
+  background-color: var(--color-primary);
+}
