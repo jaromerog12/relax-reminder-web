@@ -1,0 +1,23 @@
+@import "../../../variables.css";
+.number-alarms {
+  font-size: 64px;
+  font-weight: bold;
+  color: white;
+}
+
+.small-box .icon>i {
+  top: 0;
+}
+
+.color-white {
+  color: white;
+}
+
+
+.color-header {
+  background-color: var(--header-card)!important;
+}
+
+.container-progress-bar {
+  background-color: var(--background-cards);
+}

@@ -20,5 +20,9 @@
 }
 
 .sidebar-background{
-  background-color: var(--color-primary);
+  background-color: var(--color-primary) !important;
+}
+
+.layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
+  background-color: inherit !important;
 }
