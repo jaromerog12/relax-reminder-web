@@ -9,8 +9,6 @@
 
 html, body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--color-terciary) !important;
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -18,4 +16,38 @@ html, body {
 .title-page {
   font-size: 32px;
   font-weight: bold;
+}
+
+.content-wrapper{
+  background-color: var(--color-terciary) !important;
+  position: relative;
+}
+
+.container-center-form{
+  height: 85vh;
+}
+
+
+form {
+  background-color: var(--background-forms);
+  padding: 20px;
+  -webkit-box-shadow: 0 0 5px 1px rgba(108,108,108,0.75);
+  -moz-box-shadow: 0 0 5px 1px rgba(108,108,108,0.75);
+  box-shadow: 0 0 5px 1px rgba(108,108,108,0.75);
+}
+
+
+.button-primary {
+  background-color: var(--color-primary) !important;
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background-color: var(--hover-color-primary) !important;
+  color: #ffffff;
+}
+
+
+.swal2-actions {
+  margin-right: 20px;
 }
