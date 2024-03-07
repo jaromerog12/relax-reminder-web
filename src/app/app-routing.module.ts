@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./auth/login/login.component";
-import {DashboardComponent} from "./dashboard/dashboard/dashboard.component";
-import {HomeComponent} from "./dashboard/home/home.component";
+import { LoginComponent } from "./auth/login/login.component";
+import { DashboardComponent } from "./dashboard/dashboard/dashboard.component";
+import { HomeComponent } from "./dashboard/home/home.component";
+import { ListarActividadesComponent } from './listar-actividades/listar-actividades.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, pathMatch: 'full'},
-  { path: 'dashboard',
-  component: DashboardComponent,
-  children: [
-    { path: '', redirectTo: 'home', pathMatch: 'full'},
-    { path: 'home', component: HomeComponent },
-    { path: '**', redirectTo: '/home' }
-  ]},
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'lista-actividades', component: ListarActividadesComponent, pathMatch: 'full' },
+      { path: '**', redirectTo: '/home' }
+    ]
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }
 ];

@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'node_modules/bootstrap/dist/css/bootstrap.css';
 @import "assets/css/adminlte.min.css";
+@import "assets/css/buttons.bootstrap4.min.css";
+@import "assets/css/dataTables.bootstrap4.min.css";
+@import "assets/css/responsive.bootstrap4.min.css";
+@import 'node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 @import 'variables.css';
 
 .background-page {
@@ -19,3 +23,5 @@ html, body {
   font-size: 32px;
   font-weight: bold;
 }
+
+

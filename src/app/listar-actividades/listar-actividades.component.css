@@ -1,0 +1,75 @@
+@import "../../variables.css";
+
+.table {
+  --bs-table-bg: transparent !important;
+  margin-bottom: 0rem;
+}
+
+.odd {
+  background-color: #D5DAD1 !important;
+}
+
+.even {
+  background-color: #E8E8E8 !important;
+}
+
+.table thead {
+  background-color: #B9C5A3 !important;
+  color: #B9C5A3 !important;
+}
+
+.th-acciones{
+  width: 8%;
+}
+
+.th-fecha-creacion {
+  width: 26%;
+}
+
+.paginator {
+  background-color: #B9C5A3 !important;
+}
+
+.pagination {
+  justify-content: flex-end !important;
+}
+
+.page-item.active .page-link{
+  background-color: #426500;
+  border-color: #426500;
+  color: white;
+}
+
+.page-item .page-link{
+  background-color: transparent;
+  border-color: white;
+  color: black;
+}
+
+.dataTables_filter{
+  text-align: left !important;
+}
+
+.crear-button{
+  width: 15.5%;
+  background-color: #466731;
+  color: white;
+}
+
+.round {
+    border-radius: 1rem !important;
+}
+
+.boton-editar {
+  background-color: #C6EEAA;
+  border-color: #838b7c;
+}
+
+.boton-eliminar {
+  background-color: #EEB2AA;
+  border-color: #838b7c;
+}
+
+.icono-negro{
+    color: black;
+}

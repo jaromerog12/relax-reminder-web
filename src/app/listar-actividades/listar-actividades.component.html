@@ -1,0 +1,79 @@
+<div class="background-page dataTables_wrapper ">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 title-page">Lista de actividades</h1>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div id="example1_filter" class="dataTables_filter">
+        <label for="filtro">Filtro por nombre:</label>
+        <input type="text" id="filtro" #filtro (keyup.enter)="filtrar(filtro.value)"
+          class="form-control form-control-sm" placeholder="" aria-controls="example1">
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6" style="text-align: right;">
+      <button type="button" class="btn crear-button btn-lg">Crear</button>
+    </div>
+  </div>
+  <div class="row">
+    <table id="lista-actividades" class="table table-bordered table-striped dataTable dtr-inline"
+      aria-describedby="example1_info">
+      <thead>
+        <tr>
+          <th class="sorting" [ngClass]="ordenamientoNombre" (click)="ejecutarOrdenamiento(ordenamientoNombre,'nombre')"
+            tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending"
+            aria-label="Rendering engine: activate to sort column descending">Nombre
+            actividad
+          </th>
+          <th class="sorting th-fecha-creacion" [ngClass]="ordenamientoFecha"
+            (click)="ejecutarOrdenamiento(ordenamientoFecha,'fecha')" tabindex="0" aria-controls="example1" rowspan="1"
+            colspan="1" aria-label="Browser: activate to sort column ascending">Fecha Creación</th>
+          <th aria-controls="example1" class="th-acciones">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let actividad of actividades; let i = index" [ngClass]="{'odd': i % 2 === 0, 'even': i % 2 !== 0}">
+          <td>{{actividad.nombre}}</td>
+          <td>{{actividad.fechaCreacion}}</td>
+          <td>
+            <button type="button" class="btn btn-primary boton-editar round" style="margin-right: 20px;">
+              <i class="fas fa-pencil-alt icono-negro"></i>
+            </button>
+            <button type="button" class="btn btn-primary boton-eliminar round">
+              <i class="fas fa-trash icono-negro"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row paginator">
+    <div class="col-sm-12 col-md-5">
+      <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Mostrando {{actividades.length}}
+        de 20 registros
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-7">
+      <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+        <ul class="pagination">
+          <li class="paginate_button page-item previous" [ngClass]="{'active': botonAnterior}"
+            (click)="ejecutarPaginacion('anterior')" id="example2_previous"><a aria-controls="example2" data-dt-idx="0"
+              tabindex="0" class="page-link">Anterior</a></li>
+          <li class="paginate_button page-item" [ngClass]="{'active': botonPagina1}"><a aria-controls="example2"
+              (click)="ejecutarPaginacion('pagina1')" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+          <li class="paginate_button page-item" [ngClass]="{'active': botonPagina2}"><a aria-controls="example2"
+              (click)="ejecutarPaginacion('pagina2')" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+          <li class="paginate_button page-item next" [ngClass]="{'active': botonSiguiente}" id="example2_next"><a
+              (click)="ejecutarPaginacion('siguiente')" aria-controls="example2" data-dt-idx="7" tabindex="0"
+              class="page-link">Siguiente</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
