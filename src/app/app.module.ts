@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from "./auth/auth.module";
 import { DashboardModule } from "./dashboard/dashboard.module";
-import { ListarActividadesComponent } from './listar-actividades/listar-actividades.component';
-import { ListarActividadesModule } from './listar-actividades/listar-actividades.module';
+import { ActivityModule } from './dashboard/activity/activity.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,7 @@ import { ListarActividadesModule } from './listar-actividades/listar-actividades
     //custom
     AuthModule,
     DashboardModule,
-    ListarActividadesModule
+    ActivityModule
   ],
   providers: [],
   exports: [

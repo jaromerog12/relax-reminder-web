@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "./auth/login/login.component";
 import { DashboardComponent } from "./dashboard/dashboard/dashboard.component";
 import { HomeComponent } from "./dashboard/home/home.component";
-import { ListarActividadesComponent } from './listar-actividades/listar-actividades.component';
+import { ListarActividadesComponent } from './dashboard/activity/listar-actividad/listar-actividades.component';
 import { CreateActivityComponent } from "./dashboard/activity/create-activity/create-activity.component";
 
 const routes: Routes = [
