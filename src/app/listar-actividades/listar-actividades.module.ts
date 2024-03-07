@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListarActividadesComponent } from './listar-actividades.component';
 import { MenuModule } from '../menu/menu.module';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 
 
@@ -13,7 +13,7 @@ import { RouterOutlet } from '@angular/router';
   imports: [
     CommonModule,
     MenuModule,
-    RouterOutlet
+    RouterLink
   ]
 })
 export class ListarActividadesModule { }
