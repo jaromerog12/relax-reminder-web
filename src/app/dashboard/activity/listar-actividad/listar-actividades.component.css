@@ -1,6 +1,8 @@
 .table {
   --bs-table-bg: transparent !important;
   margin-bottom: 0rem;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .odd {
@@ -22,6 +24,10 @@
 
 .th-fecha-creacion {
   width: 26%;
+}
+
+.table.dataTable{
+  margin-bottom: 0px !important;
 }
 
 .paginator {
@@ -70,4 +76,13 @@
 
 .icono-negro{
     color: black;
+}
+
+.paginate_button:hover {
+  cursor: pointer;
+}
+
+td {
+  font-size: 16px !important;
+  font-family: 'Inter', sans-serif !important;
 }

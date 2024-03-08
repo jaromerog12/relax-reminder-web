@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TitleService } from 'src/app/utils/TitleService';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Actividad } from 'src/app/model/actividad';
 
 @Component({
   selector: 'app-edit-activity',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-activity.component.css']
 })
 export class EditActivityComponent {
+  actividad!: Actividad;
   nameRemainingChars: number = 20
   nameMaximumChars: number = 20;
   descriptionRemainingChars: number = 300
@@ -18,6 +20,7 @@ export class EditActivityComponent {
 
   ngOnInit() {
     this.sendDataToDashboard();
+    this.actividad = history.state.data;
   }
 
   sendDataToDashboard() {
