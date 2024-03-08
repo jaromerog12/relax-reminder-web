@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TitleService } from 'src/app/utils/TitleService';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-activity',
@@ -12,7 +13,7 @@ export class EditActivityComponent {
   nameMaximumChars: number = 20;
   descriptionRemainingChars: number = 300
   descriptionMaximumChars: number = 300;
-  constructor(private titleService: TitleService) {
+  constructor(private titleService: TitleService, private router: Router) {
   }
 
   ngOnInit() {
@@ -42,6 +43,10 @@ export class EditActivityComponent {
     this.descriptionRemainingChars = this.descriptionMaximumChars - (event.target as HTMLInputElement).value.length;
   }
 
+  redirectListaActividades() {
+    this.router.navigateByUrl('/dashboard/lista-actividades')
+  }
+
   edit() {
     Swal.fire({
       title: "<strong>Buen trabajo!!!</strong>",
@@ -59,6 +64,10 @@ export class EditActivityComponent {
       customClass: {
         confirmButton: 'button-primary'
       }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.redirectListaActividades();
+      };
     });
   }
 

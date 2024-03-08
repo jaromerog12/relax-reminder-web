@@ -1,14 +1,5 @@
 <div class="background-page dataTables_wrapper ">
   <!-- Content Header (Page header) -->
-  <div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0 title-page">Lista de actividades</h1>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
   <div class="row">
     <div class="col-sm-12 col-md-6">
       <div id="example1_filter" class="dataTables_filter">
@@ -18,7 +9,7 @@
       </div>
     </div>
     <div class="col-sm-12 col-md-6" style="text-align: right;">
-      <button routerLink="/dashboard/activity/create" type="button" class="btn crear-button btn-lg">Crear</button>
+      <button type="button" class="btn crear-button btn-lg" (click)="redirectCrear()">Crear</button>
     </div>
   </div>
   <div class="row">
@@ -42,10 +33,11 @@
           <td>{{actividad.nombre}}</td>
           <td>{{actividad.fechaCreacion}}</td>
           <td>
-            <button type="button" class="btn btn-primary boton-editar round" style="margin-right: 20px;">
+            <button type="button" (click)="redirectEditar()" class="btn btn-primary boton-editar round"
+              style="margin-right: 20px;">
               <i class="fas fa-pencil-alt icono-negro"></i>
             </button>
-            <button type="button" class="btn btn-primary boton-eliminar round">
+            <button (click)="eliminarActividad(actividad)" type="button" class="btn btn-primary boton-eliminar round">
               <i class="fas fa-trash icono-negro"></i>
             </button>
           </td>

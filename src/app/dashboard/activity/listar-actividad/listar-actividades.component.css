@@ -1,5 +1,3 @@
-@import "../../variables.css";
-
 .table {
   --bs-table-bg: transparent !important;
   margin-bottom: 0rem;
@@ -19,7 +17,7 @@
 }
 
 .th-acciones{
-  width: 8%;
+  width: 11%;
 }
 
 .th-fecha-creacion {

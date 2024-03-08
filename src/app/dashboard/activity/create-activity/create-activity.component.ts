@@ -1,25 +1,26 @@
-import {Component, OnInit} from '@angular/core';
-import {TitleService} from "../../../utils/TitleService";
+import { Component, OnInit } from '@angular/core';
+import { TitleService } from "../../../utils/TitleService";
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-activity',
   templateUrl: './create-activity.component.html',
   styleUrls: ['./create-activity.component.css']
 })
-export class CreateActivityComponent implements OnInit{
+export class CreateActivityComponent implements OnInit {
   nameRemainingChars: number = 20
   nameMaximumChars: number = 20;
   descriptionRemainingChars: number = 300
   descriptionMaximumChars: number = 300;
-  constructor(private titleService: TitleService) {
+  constructor(private titleService: TitleService, private router: Router) {
   }
 
   ngOnInit() {
     this.sendDataToDashboard();
   }
 
-  sendDataToDashboard(){
+  sendDataToDashboard() {
     const dataToSend = {
       title: "Crear actividad"
     }
@@ -42,6 +43,10 @@ export class CreateActivityComponent implements OnInit{
     this.descriptionRemainingChars = this.descriptionMaximumChars - (event.target as HTMLInputElement).value.length;
   }
 
+  redirectListaActividades() {
+    this.router.navigateByUrl('/dashboard/lista-actividades')
+  }
+
   save() {
     Swal.fire({
       title: "<strong>Buen trabajo!!!</strong>",
@@ -59,6 +64,10 @@ export class CreateActivityComponent implements OnInit{
       customClass: {
         confirmButton: 'button-primary'
       }
-    });
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.redirectListaActividades();
+      };
+    });;
   }
 }

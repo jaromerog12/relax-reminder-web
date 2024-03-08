@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { Actividad } from 'src/model/actividad';
+import { Router } from '@angular/router';
+import { TitleService } from 'src/app/utils/TitleService';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-listar-actividades',
@@ -17,9 +21,27 @@ export class ListarActividadesComponent {
   ordenamientoNombre: String = 'sorting_desc'
   ordenamientoFecha: String = 'sorting_desc'
 
+  constructor(private router: Router, private titleService: TitleService) { }
+
   ngOnInit(): void {
     this.actividadesBD = this.getArregloPagina1()
+    this.sendDataToDashboard();
     this.actividades = this.actividadesBD
+  }
+
+  sendDataToDashboard() {
+    const dataToSend = {
+      title: "Lista de actividades"
+    }
+    this.titleService.setData(dataToSend);
+  }
+
+  redirectCrear() {
+    this.router.navigateByUrl('/dashboard/create');
+  }
+
+  redirectEditar() {
+    this.router.navigateByUrl('/dashboard/editar');
   }
 
   initActiveButton() {
@@ -35,6 +57,28 @@ export class ListarActividadesComponent {
     } else {
       this.actividades = this.getArregloPagina1()
     }
+  }
+
+  eliminarActividad(actividad: Actividad) {
+    Swal.fire({
+      icon: "warning",
+      html: `
+    Desea eliminar la actividad ${actividad.nombre}?
+  `,
+      showCloseButton: true,
+      showCancelButton: true,
+      confirmButtonColor: '#DA0000',
+      focusConfirm: false,
+      reverseButtons: true,
+      confirmButtonText: `Si`,
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log('Se hizo clic en Sí');
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        console.log('Se hizo clic en No');
+      }
+    });
   }
 
   getArregloPagina1() {
