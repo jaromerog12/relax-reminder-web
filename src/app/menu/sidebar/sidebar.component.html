@@ -1,12 +1,12 @@
-<aside class="main-sidebar sidebar-dark-primary  sidebar-background elevation-4">
+<aside class="main-sidebar sidebar-dark-primary  sidebar-background elevation-4  sidebar-no-expand">
   <!-- Brand Logo -->
-  <a href="#" class="brand-link" style="background-color: inherit;">
-    <img src="/assets/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+  <a href="/dashboard/home" class="brand-link"  style="background-color: inherit;">
+    <img src="/assets/img/logo.png" alt="Relax Reminder Logo" class="brand-image img-circle elevation-3">
     <span class="brand-text font-weight-light">Relax Reminder</span>
   </a>
 
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div class="sidebar" style="position: relative;">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
@@ -18,8 +18,8 @@
     </div>
 
     <!-- Sidebar Menu -->
-    <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <nav class="mt-2" style="height: 91%; position: relative;">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="height: inherit;">
         <li class="nav-item">
           <a routerLink="/dashboard/lista-actividades" routerLinkActive="router-link-active" class="nav-link">
             <i class="fa-solid fa-person-walking fa-lg" style="color: #dfdfdf;"></i>
@@ -28,9 +28,14 @@
             </p>
           </a>
         </li>
+        <li class="nav-item" style="position: absolute; bottom: 0;">
+          <a routerLink="/login"  class="btn btn-lg nav-link" role="button" aria-pressed="true" style="background-color: #0c525d; color: #fff"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #dfdfdf;"></i>&nbsp;&nbsp;&nbsp;<p>Cerrar sesión</p></a>
+        </li>
       </ul>
+
     </nav>
     <!-- /.sidebar-menu -->
   </div>
   <!-- /.sidebar -->
+
 </aside>
