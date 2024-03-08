@@ -61,14 +61,14 @@ export class CreateActivityComponent implements OnInit {
         confirmButton: 'button-primary'
       },
       preConfirm:() => {
-        this.router.navigate(['/dashboard/home']);
+        this.navigateToListActivities();
       },
       didClose:() => {
-        this.router.navigate(['/dashboard/home']);
+        this.navigateToListActivities();
       }
     });
   }
   navigateToListActivities(){
-    this.router.navigate(['/dashboard/home']);
+    this.router.navigate(['/dashboard/lista-actividades']);
   }
 }
