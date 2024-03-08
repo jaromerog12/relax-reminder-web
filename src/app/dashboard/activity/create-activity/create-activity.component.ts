@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TitleService} from "../../../utils/TitleService";
 import Swal from 'sweetalert2';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-activity',
@@ -12,7 +13,7 @@ export class CreateActivityComponent implements OnInit{
   nameMaximumChars: number = 20;
   descriptionRemainingChars: number = 300
   descriptionMaximumChars: number = 300;
-  constructor(private titleService: TitleService) {
+  constructor(private titleService: TitleService, private router: Router) {
   }
 
   ngOnInit() {
@@ -58,7 +59,16 @@ export class CreateActivityComponent implements OnInit{
       confirmButtonAriaLabel: "Thumbs up, great!",
       customClass: {
         confirmButton: 'button-primary'
+      },
+      preConfirm:() => {
+        this.router.navigate(['/dashboard/home']);
+      },
+      didClose:() => {
+        this.router.navigate(['/dashboard/home']);
       }
     });
+  }
+  navigateToListActivities(){
+    this.router.navigate(['/dashboard/home']);
   }
 }
