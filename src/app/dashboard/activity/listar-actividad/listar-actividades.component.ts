@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Actividad } from 'src/model/actividad';
+import { Actividad } from 'src/app/model/actividad';
 import { Router } from '@angular/router';
 import { TitleService } from 'src/app/utils/TitleService';
 import Swal from 'sweetalert2';
@@ -53,7 +53,7 @@ export class ListarActividadesComponent {
 
   filtrar(textoFiltro: string) {
     if (textoFiltro != '') {
-      this.actividades = this.actividadesBD.filter(actividad => actividad.nombre.includes(textoFiltro));
+      this.actividades = this.actividadesBD.filter(actividad => actividad.nombre.toLocaleLowerCase().includes(textoFiltro.toLocaleLowerCase()));
     } else {
       this.actividades = this.getArregloPagina1()
     }
@@ -192,6 +192,7 @@ export class ListarActividadesComponent {
       case 'anterior':
         this.actividadesBD = this.getArregloPagina1()
         this.botonAnterior = true
+        this.botonPagina1 = true
         break;
       case 'pagina1':
         this.actividadesBD = this.getArregloPagina1()
@@ -204,6 +205,7 @@ export class ListarActividadesComponent {
       case 'siguiente':
         this.actividadesBD = this.getArregloPagina2()
         this.botonSiguiente = true
+        this.botonPagina2 = true
         break;
       default:
         console.log('La opción no coincide con ningún caso');

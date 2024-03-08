@@ -1,0 +1,46 @@
+.seccion-logo{
+  background-color: #B9C5A3;
+  border: 1px solid;
+}
+
+.iniciar-sesion-titulo{
+  font-size: 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+}
+
+.olvido-password{
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.botones{
+  background-color: #466731 !important;
+  border-color: #466731 !important;
+}
+
+.seccion-login{
+  width: 546px;
+  height: 552px;
+  background-color: #B9C5A3;
+}
+
+.no-cuenta{
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  color: black;
+}
+
+.registrar {
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  color: #466731;
+}
+
+h3 {
+  font-size: 35px;
+}
+
+h1 {
+  font-size: 80px;
+}
