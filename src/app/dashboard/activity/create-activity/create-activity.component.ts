@@ -43,10 +43,6 @@ export class CreateActivityComponent implements OnInit {
     this.descriptionRemainingChars = this.descriptionMaximumChars - (event.target as HTMLInputElement).value.length;
   }
 
-  redirectListaActividades() {
-    this.router.navigateByUrl('/dashboard/lista-actividades')
-  }
-
   save() {
     Swal.fire({
       title: "<strong>Buen trabajo!!!</strong>",
@@ -63,11 +59,16 @@ export class CreateActivityComponent implements OnInit {
       confirmButtonAriaLabel: "Thumbs up, great!",
       customClass: {
         confirmButton: 'button-primary'
+      },
+      preConfirm:() => {
+        this.router.navigate(['/dashboard/home']);
+      },
+      didClose:() => {
+        this.router.navigate(['/dashboard/home']);
       }
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.redirectListaActividades();
-      };
-    });;
+    });
+  }
+  navigateToListActivities(){
+    this.router.navigate(['/dashboard/home']);
   }
 }
