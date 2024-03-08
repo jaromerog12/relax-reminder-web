@@ -40,8 +40,8 @@ export class ListarActividadesComponent {
     this.router.navigateByUrl('/dashboard/create');
   }
 
-  redirectEditar() {
-    this.router.navigateByUrl('/dashboard/editar');
+  redirectEditar(actividad: Actividad) {
+    this.router.navigate(['/dashboard/editar'], { state: { data: actividad } });
   }
 
   initActiveButton() {
